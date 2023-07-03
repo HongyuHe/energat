@@ -1,0 +1,12 @@
+absl-py==1.4.0
+contextlib2==21.6.0
+ml-collections==0.1.1
+numpy==1.25.0
+pandas==2.0.2
+psutil==5.9.5
+python-dateutil==2.8.2
+pytz==2023.3
+PyYAML==6.0
+six==1.16.0
+tzdata==2023.3
+pytest==7.4.0

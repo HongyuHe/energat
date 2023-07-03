@@ -1,0 +1,56 @@
+[build-system]
+# requires = ["setuptools", "setuptools-scm"]
+# build-backend = "setuptools.build_meta"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "energat"
+authors = [
+    {name = "Hongyu Hè", email = "honghe@inf.ethz.ch"},
+]
+description = "EnergAt: A software energy attribution tool."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+classifiers = [
+    "Topic :: System :: Monitoring",
+    "Topic :: System :: Operating System",
+    "Topic :: System :: Power (UPS)",
+    "Topic :: System :: Operating System Kernels :: Linux",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "absl-py",
+    "contextlib2",
+    "ml-collections",
+    "numpy",
+    "pandas",
+    "psutil",
+    "python-dateutil",
+    "pytz",
+    "PyYAML",
+    "six",
+    "tzdata",
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "energat.VERSION"}
+
+[tool.flit.module]
+name = "energat"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "mypy",
+    "flake8",
+]
+
+[project.scripts]
+energat = "energat.__main__:main"
+
+[project.urls]
+Paper = "https://hongyu.nl/papers/2023_hotcarbon_energat.pdf"
+Source = "https://github.com/HongyuHe/energat"
