@@ -1,6 +1,6 @@
 import sys
 
-from energat.common import FLAGS, logger, read_cputime_sec
+from energat.common import FLAGS, logger
 from energat.tracer import EnergyTracer
 
 
@@ -25,7 +25,7 @@ def main():
         logger.info("System check passed!")
         return 0
 
-    if FLAGS.baseline:
+    if FLAGS.basefile:
         EnergyTracer(pid).estimate_baseline_power(save=True)
         return 0
 
